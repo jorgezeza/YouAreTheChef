@@ -1,21 +1,23 @@
 import React from 'react'
 import {ActivityIndicator} from 'react-native'
 import {Text} from '../Text/Text'
-import {Box} from '../Box/Box'
+import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box'
 
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityBoxProps {
   title: string
   loading?: boolean
 }
 
-export function Button({title, loading}: ButtonProps) {
+// eslint-disable-next-line @typescript-eslint/no-shadow
+export function Button({title, loading, ...TouchableOpacityBoxProps}: ButtonProps) {
   return (
-    <Box
-      backgroundColor="secondary"
+    <TouchableOpacityBox
+      backgroundColor="redTertiary"
       paddingHorizontal="s20"
       height={52}
       alignItems="center"
       justifyContent="center"
+      {...TouchableOpacityBoxProps}
     >
       {loading ? (
         <ActivityIndicator />
@@ -24,6 +26,6 @@ export function Button({title, loading}: ButtonProps) {
           {title}
         </Text>
       )}
-    </Box>
+    </TouchableOpacityBox>
   )
 }
