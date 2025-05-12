@@ -20,7 +20,8 @@ export const theme = createTheme({
     secondary: palette.grennPrimary,
     primaryContrast: palette.white,
     secondaryContrast: palette.black,
-    background: palette.backgroundPrimary
+    background: palette.backgroundPrimary,
+    backgroundContrast: palette.whiteSecondary
   },
   spacing: {
     s4: 4,
@@ -40,6 +41,9 @@ export const theme = createTheme({
     s4: 4,
     s12: 12,
     s50: 50
+  },
+  textVariants: {
+    defaults: {}
   }
 })
 

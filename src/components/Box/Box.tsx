@@ -16,6 +16,7 @@ import {
 } from '@shopify/restyle'
 
 export const Box = createBox<Theme>()
+export type BoxProps = React.ComponentProps<typeof Box>
 
 export type TouchableOpacityBoxProps = BackgroundColorProps<Theme> &
 SpacingProps<Theme> &
