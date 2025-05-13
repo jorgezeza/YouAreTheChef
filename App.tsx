@@ -14,7 +14,9 @@ function App(): React.JSX.Element {
         </Text>
 
         <View style={{paddingVertical: 24, paddingHorizontal: 24}}>
-          <Button title="Entrar" marginBottom='s10' backgroundColor='background' />
+          <Button title="Primary" marginBottom="s10" />
+          <Button preset="outline" title="Outline" marginBottom="s10" />
+          <Button preset="withIcon" title="Outline" marginBottom="s10" />
           <Button loading title="loading" />
         </View>
       </SafeAreaView>
