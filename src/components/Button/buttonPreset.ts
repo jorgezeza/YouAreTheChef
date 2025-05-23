@@ -8,25 +8,53 @@ interface ButtonUI {
   icon?: any
 }
 
- export const buttonPresets: Record<ButtonPreset, ButtonUI> = {
+ export const buttonPresets: Record<ButtonPreset, {
+  default: ButtonUI,
+  disabled: ButtonUI,
+ }> = {
   primary: {
-    container: {
-      backgroundColor: 'primary'
+    default: {
+      container: {
+        backgroundColor: 'primary'
+      },
+      content: 'primaryContrast'
     },
-    content: 'primaryContrast'
+    disabled: {
+      container: {
+        backgroundColor: 'background'
+      },
+      content: 'secondaryContrast'
+    }
+  },
+  secondary: {
+    default: {
+      container: {
+        backgroundColor: 'secondary'
+      },
+      content: 'primaryContrast'
+    },
+    disabled: {
+      container: {
+        backgroundColor: 'background'
+      },
+      content: 'backgroundContrast'
+    }
   },
   outline: {
-    container: {
-      borderWidth: 1,
-      borderColor: 'black'
+    default: {
+      container: {
+        borderWidth: 1,
+        borderColor: 'primary'
+      },
+      content: 'primary'
     },
-    content: 'secondaryContrast'
-  },
-  withIcon: {
-    container: {
-      backgroundColor: 'redPrimary'
-    },
-    content: 'blue'
+    disabled: {
+      container: {
+        borderWidth: 1,
+        borderColor: 'backgroundContrast'
+      },
+      content: 'primaryContrast'
+    }
+
   }
 }
-

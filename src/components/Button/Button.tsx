@@ -1,28 +1,44 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React from 'react'
-import {ActivityIndicator} from 'react-native'
 import {Text} from '../Text/Text'
-import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box'
+import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box'
+import {buttonPresets} from './buttonPreset'
+import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator'
+
+export type ButtonPreset = 'primary' | 'secondary' | 'outline'
 
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string
   loading?: boolean
+  preset?: ButtonPreset
+  disabled?: boolean
 }
 
-// eslint-disable-next-line @typescript-eslint/no-shadow
-export function Button({title, loading, ...TouchableOpacityBoxProps}: ButtonProps) {
+/**
+ * Os botões tem variações que do lado esquerdo tem icones
+ */
+
+export function Button({
+  title,
+  loading,
+  preset = 'primary',
+  disabled,
+  ...TouchableOpacityBoxProps
+}: ButtonProps) {
+  const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default']
   return (
     <TouchableOpacityBox
-      backgroundColor="redTertiary"
+      disabled={disabled || loading}
       paddingHorizontal="s20"
       height={52}
       alignItems="center"
       justifyContent="center"
-      {...TouchableOpacityBoxProps}
-    >
+      {...buttonPreset.container}
+      {...TouchableOpacityBoxProps}>
       {loading ? (
-        <ActivityIndicator />
+        <ActivityIndicator color="primaryContrast" />
       ) : (
-        <Text preset="largeFont" color="backgroundContrast" >
+        <Text preset="largeFont" color={buttonPreset.content}>
           {title}
         </Text>
       )}
