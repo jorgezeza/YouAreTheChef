@@ -16,8 +16,8 @@ import { createTheme } from '@shopify/restyle'
 export const theme = createTheme({
   colors: {
     ...palette,
-    primary: palette.redPrimary,
-    secondary: palette.grennPrimary,
+    primary: palette.grennPrimary,
+    secondary: palette.redPrimary,
     primaryContrast: palette.white,
     secondaryContrast: palette.black,
     background: palette.backgroundPrimary,
@@ -48,3 +48,4 @@ export const theme = createTheme({
 })
 
 export type Theme = typeof theme
+export type themeColors = keyof Theme['colors']
