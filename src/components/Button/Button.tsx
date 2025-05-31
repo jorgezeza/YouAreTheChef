@@ -14,10 +14,6 @@ interface ButtonProps extends TouchableOpacityBoxProps {
   disabled?: boolean
 }
 
-/**
- * Os botões tem variações que do lado esquerdo tem icones
- */
-
 export function Button({
   title,
   loading,
