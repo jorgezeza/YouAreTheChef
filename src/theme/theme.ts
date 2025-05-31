@@ -10,7 +10,11 @@ import { createTheme } from '@shopify/restyle'
   white: '#ffffff',
   whiteSecondary: '#ECE1E1',
   black: '#000000',
-  blackSecondary: '#151515'
+  blackSecondary: '#151515',
+  backgroundPrimaryTransparente: 'rgba(35, 32, 32, 0.2)',
+  transparent: 'transparent',
+  none: 'none',
+  whiteSecondaryTranparent: 'rgba(255, 253, 253, 0.3)'
  }
 
 export const theme = createTheme({
@@ -21,7 +25,9 @@ export const theme = createTheme({
     primaryContrast: palette.white,
     secondaryContrast: palette.black,
     background: palette.backgroundPrimary,
-    backgroundContrast: palette.whiteSecondary
+    backgroundContrast: palette.whiteSecondary,
+    backgroundInput: palette.backgroundPrimaryTransparente,
+    whiteSecondaryTranparent: palette.whiteSecondaryTranparent
   },
   spacing: {
     s4: 4,
