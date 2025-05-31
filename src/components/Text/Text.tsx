@@ -1,7 +1,7 @@
 import React from 'react'
 import {TextStyle} from 'react-native'
-import { createText } from '@shopify/restyle'
-import { Theme } from '../../theme/theme'
+import {createText} from '@shopify/restyle'
+import {Theme} from '../../theme/theme'
 
 const SRText = createText<Theme>()
 type SRTextProps = React.ComponentProps<typeof SRText>
@@ -18,8 +18,9 @@ export function Text({
 }: TextProps) {
   return (
     <SRText
-    color="backgroundContrast"
-    style={[$fontSize[preset],{ fontFamily: $fontFamily.primaryFont }, style]} {...sRTextProps}>
+      color="primaryContrast"
+      style={[$fontSize[preset], {fontFamily: $fontFamily.primaryFont}, style]}
+      {...sRTextProps}>
       {children}
     </SRText>
   )
@@ -27,12 +28,12 @@ export function Text({
 
 type TextVariants = 'largeFont' | 'mediumFont' | 'smallFont'
 
-const $fontSize: Record<TextVariants, TextStyle> = {
+export const $fontSize: Record<TextVariants, TextStyle> = {
   largeFont: {fontSize: 24},
   mediumFont: {fontSize: 20},
   smallFont: {fontSize: 16}
 }
 
-const $fontFamily = {
+export const $fontFamily = {
   primaryFont: 'Roboto-Regular'
 }
