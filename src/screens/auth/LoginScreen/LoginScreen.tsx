@@ -1,15 +1,19 @@
 import React from 'react'
-import { Box } from '../../../components/Box/Box'
-import { TextInput } from '../../../components/TextInput/TextInput'
-import { Icon } from '../../../components/Icon/Icon'
-import { Button } from '../../../components/Button/Button'
-import { Text } from '../../../components/Text/Text'
-import { Screen } from '../../../components/Screen/Screen'
-
+import {Box, BoxProps} from '../../../components/Box/Box'
+import {TextInput} from '../../../components/TextInput/TextInput'
+import {Icon} from '../../../components/Icon/Icon'
+import {Button} from '../../../components/Button/Button'
+import {Text} from '../../../components/Text/Text'
+import {Screen} from '../../../components/Screen/Screen'
+import {PasswordInput} from '../../../components/PasswordInput/PasswordInput'
+import {Image} from 'react-native'
 
 export function LoginScreen() {
   return (
-    <Screen>
+    <Screen imageBackground="backgroundLogin">
+      <Box {...$containerPersonLogin}>
+        <Image source={require('../../../assests/images/personLogin.png')} />
+      </Box>
       <Box>
         <Box>
           <TextInput
@@ -21,7 +25,7 @@ export function LoginScreen() {
           />
         </Box>
         <Box>
-          <TextInput
+          <PasswordInput
             label="Senha"
             placeholder="Digite sua senha"
             LeftComponent={<Icon name="lock" />}
@@ -42,8 +46,8 @@ export function LoginScreen() {
   )
 }
 
-// const $containerPersonLogin: BoxProps = {
-//   alignItems: 'center',
-//   mt: 's56',
-//   mb: 's56'
-// }
+export const $containerPersonLogin: BoxProps = {
+  alignItems: 'center',
+  mt: 's56',
+  mb: 's56'
+}
