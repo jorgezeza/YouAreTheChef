@@ -4,9 +4,8 @@ import {TextInput} from '../../../components/TextInput/TextInput'
 import {Button} from '../../../components/Button/Button'
 import {Icon} from '../../../components/Icon/Icon'
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput'
-import {Box} from '../../../components/Box/Box'
+import {Box, BoxProps} from '../../../components/Box/Box'
 import {Image} from 'react-native'
-import {$containerPersonLogin} from '../LoginScreen/LoginScreen'
 
 export function SignUpScreen() {
   const submitForm = () => {
@@ -20,32 +19,35 @@ export function SignUpScreen() {
       <TextInput
         label="Username"
         placeholder="Digite seu nome"
+        LeftComponent={<Icon name='user' />}
         boxProps={{mb: 's8'}}
       />
       <TextInput
         label=" e-mail"
         placeholder="Digite seu e-mail"
+        LeftComponent={<Icon name='email' />}
         boxProps={{mb: 's8'}}
       />
-      <TextInput
+      <PasswordInput
         label="Senha"
         placeholder="Digite sua senha"
+        LeftComponent={<Icon name='lock' />}
         boxProps={{mb: 's8'}}
       />
       <PasswordInput
-        RightComponent={<Icon name="lock" />}
-        label="Confirmar senhaaaa"
+        label="Confirmar senha"
         placeholder="Confirmar senha"
+        LeftComponent={<Icon name='lock' />}
         boxProps={{mb: 's8'}}
-      />
-
-      <PasswordInput
-        LeftComponent={<Icon name="eyeOn" />}
-        label="Nova Senha"
-        placeholder="senhaaa"
       />
 
       <Button onPress={submitForm} title="Criar uma conta" />
     </Screen>
   )
+}
+
+export const $containerPersonLogin: BoxProps = {
+  alignItems: 'center',
+  mt: 's10',
+  mb: 's56'
 }

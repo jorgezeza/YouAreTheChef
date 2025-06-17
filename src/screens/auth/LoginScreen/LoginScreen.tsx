@@ -1,4 +1,5 @@
 import React from 'react'
+import {NativeStackScreenProps} from '@react-navigation/native-stack'
 import {Box, BoxProps} from '../../../components/Box/Box'
 import {TextInput} from '../../../components/TextInput/TextInput'
 import {Icon} from '../../../components/Icon/Icon'
@@ -7,8 +8,14 @@ import {Text} from '../../../components/Text/Text'
 import {Screen} from '../../../components/Screen/Screen'
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput'
 import {Image} from 'react-native'
+import {RootStackParamList} from '../../../routes/Routes'
 
-export function LoginScreen() {
+type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
+
+export function LoginScreen({navigation}: ScreenProps) {
+  function navigateToSignUpScreen() {
+    navigation.navigate('SignUpScreen')
+  }
   return (
     <Screen imageBackground="backgroundLogin">
       <Box {...$containerPersonLogin}>
@@ -40,13 +47,17 @@ export function LoginScreen() {
         <Text color="primaryContrast" mb="s8" mt="s8" textAlign="center">
           Esqueci minha senha
         </Text>
-        <Button preset="secondary" title="Crie sua conta" />
+        <Button
+          onPress={navigateToSignUpScreen}
+          preset="secondary"
+          title="Crie sua conta"
+        />
       </Box>
     </Screen>
   )
 }
 
-export const $containerPersonLogin: BoxProps = {
+const $containerPersonLogin: BoxProps = {
   alignItems: 'center',
   mt: 's56',
   mb: 's56'
