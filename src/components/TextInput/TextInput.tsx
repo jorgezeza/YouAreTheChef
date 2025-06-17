@@ -43,6 +43,16 @@ export function TextInput({
     borderBottomColor: errorMessage ? 'redPrimary' : 'whiteSecondaryTranparent'
   }
 
+  const $textInputStyle: TextStyle = {
+  flexGrow: 1,
+  flexShrink: 1,
+  padding: 0,
+  fontFamily: $fontFamily.primaryFont,
+  color: colors.whiteSecondary,
+  height: 20
+}
+
+
   return (
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>
@@ -73,12 +83,4 @@ export function TextInput({
       </Pressable>
     </Box>
   )
-}
-
-const $textInputStyle: TextStyle = {
-  flexGrow: 1,
-  flexShrink: 1,
-  padding: 0,
-  fontFamily: $fontFamily.primaryFont,
-  height: 20
 }
