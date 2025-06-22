@@ -1,6 +1,6 @@
 import { createTheme } from '@shopify/restyle'
 
- const palette = {
+ export const palette = {
   grennPrimary: '#00A127',
   redPrimary: '#F41F2D',
   redSecondary: '#FF1929',
