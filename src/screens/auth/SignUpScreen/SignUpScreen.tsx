@@ -6,10 +6,17 @@ import {Icon} from '../../../components/Icon/Icon'
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput'
 import {Box, BoxProps} from '../../../components/Box/Box'
 import {Image} from 'react-native'
+import {NativeStackScreenProps} from '@react-navigation/native-stack'
+import {RootStackParamList} from '../../../routes/Routes'
 
-export function SignUpScreen() {
+type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
+
+export function SignUpScreen({navigation}: ScreenProps) {
   const submitForm = () => {
-    //TODO
+    navigation.navigate('SuccessScreen', {
+      title: 'Sua conta foi criada com sucesso !',
+      description: 'Agora é só fazer login no app'
+    })
   }
   return (
     <Screen canGoBack scrollable imageBackground="backgroundLogin">
@@ -19,25 +26,25 @@ export function SignUpScreen() {
       <TextInput
         label="Username"
         placeholder="Digite seu nome"
-        LeftComponent={<Icon name='user' />}
+        LeftComponent={<Icon name="user" />}
         boxProps={{mb: 's8'}}
       />
       <TextInput
         label=" e-mail"
         placeholder="Digite seu e-mail"
-        LeftComponent={<Icon name='email' />}
+        LeftComponent={<Icon name="email" />}
         boxProps={{mb: 's8'}}
       />
       <PasswordInput
         label="Senha"
         placeholder="Digite sua senha"
-        LeftComponent={<Icon name='lock' />}
+        LeftComponent={<Icon name="lock" />}
         boxProps={{mb: 's8'}}
       />
       <PasswordInput
         label="Confirmar senha"
         placeholder="Confirmar senha"
-        LeftComponent={<Icon name='lock' />}
+        LeftComponent={<Icon name="lock" />}
         boxProps={{mb: 's8'}}
       />
 
