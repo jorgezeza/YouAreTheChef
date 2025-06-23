@@ -7,15 +7,15 @@ import { RootStackParamList } from '../../../routes/Routes'
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SuccessScreen'>
 
-export function SuccessScreen({route}: ScreenProps) {
+export function SuccessScreen({route, navigation}: ScreenProps) {
   const goBackToBegin = () => {
-    //TODO: navegar para a tela de login
+    navigation.goBack()
   }
   return (
     <Screen imageBackground="backgroundLogin">
-      <Text mt='s56' preset="largeFont">{route.params.title}</Text>
+      <Text mt='s56' preset="extraLargeFont">{route.params.title}</Text>
       <Text mt='s24' preset="mediumFont">{route.params.description}</Text>
-      <Button mt='s56' onPress={goBackToBegin} title="Voltar ao início" />
+      <Button mt='s24' onPress={goBackToBegin} title="Voltar ao início" />
     </Screen>
   )
 }

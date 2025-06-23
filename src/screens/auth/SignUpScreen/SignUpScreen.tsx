@@ -8,12 +8,14 @@ import {Box, BoxProps} from '../../../components/Box/Box'
 import {Image} from 'react-native'
 import {NativeStackScreenProps} from '@react-navigation/native-stack'
 import {RootStackParamList} from '../../../routes/Routes'
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess'
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
 
 export function SignUpScreen({navigation}: ScreenProps) {
+  const {reset} = useResetNavigationSuccess()
   const submitForm = () => {
-    navigation.navigate('SuccessScreen', {
+    reset({
       title: 'Sua conta foi criada com sucesso !',
       description: 'Agora é só fazer login no app'
     })
