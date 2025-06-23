@@ -16,6 +16,10 @@ export function LoginScreen({navigation}: ScreenProps) {
   function navigateToSignUpScreen() {
     navigation.navigate('SignUpScreen')
   }
+
+  const navigateToForgotPasswordScreen = () => {
+    navigation.navigate('ForgotPasswordScreen')
+  }
   return (
     <Screen imageBackground="backgroundLogin">
       <Box {...$containerPersonLogin}>
@@ -44,7 +48,12 @@ export function LoginScreen({navigation}: ScreenProps) {
 
       <Box>
         <Button title="Entrar" />
-        <Text color="primaryContrast" mb="s8" mt="s8" textAlign="center">
+        <Text
+          onPress={navigateToForgotPasswordScreen}
+          color="primaryContrast"
+          mb="s8"
+          mt="s8"
+          textAlign="center">
           Esqueci minha senha
         </Text>
         <Button

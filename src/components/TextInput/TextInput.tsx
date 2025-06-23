@@ -51,8 +51,6 @@ export function TextInput({
   color: colors.whiteSecondary,
   height: 20
 }
-
-
   return (
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>

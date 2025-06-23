@@ -26,9 +26,10 @@ export function Text({
   )
 }
 
-type TextVariants = 'largeFont' | 'mediumFont' | 'smallFont'
+type TextVariants = 'largeFont' | 'mediumFont' | 'smallFont' | 'extraLargeFont'
 
 export const $fontSize: Record<TextVariants, TextStyle> = {
+  extraLargeFont: {fontSize: 36},
   largeFont: {fontSize: 24},
   mediumFont: {fontSize: 20},
   smallFont: {fontSize: 16}
