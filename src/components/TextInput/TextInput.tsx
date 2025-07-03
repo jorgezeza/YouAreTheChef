@@ -44,31 +44,32 @@ export function TextInput({
   }
 
   const $textInputStyle: TextStyle = {
-  flexGrow: 1,
-  flexShrink: 1,
-  padding: 0,
-  fontFamily: $fontFamily.primaryFont,
-  color: colors.whiteSecondary,
-  height: 20
-}
+    flexGrow: 1,
+    flexShrink: 1,
+    padding: 0,
+    fontFamily: $fontFamily.primaryFont,
+    color: colors.whiteSecondary,
+    height: 20
+  }
   return (
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>
         <Text preset="mediumFont">{label}</Text>
         <Box {...$textInputContainer}>
           {LeftComponent && (
-            <Box justifyContent="center" ml="s12" mr="s8" >
+            <Box justifyContent="center" ml="s12" mr="s8">
               {LeftComponent}
             </Box>
           )}
           <RNTextInput
+            autoCapitalize="none"
             ref={inputRef}
             placeholderTextColor={colors.whiteSecondary}
             style={$textInputStyle}
             {...rnTextInputProps}
           />
           {RightComponent && (
-            <Box justifyContent="center" ml="s8" mr="s8" >
+            <Box justifyContent="center" ml="s8" mr="s8">
               {RightComponent}
             </Box>
           )}
