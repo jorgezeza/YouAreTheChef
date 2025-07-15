@@ -1,17 +1,20 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
 import {NativeStackScreenProps} from '@react-navigation/native-stack'
-import {Box, BoxProps} from '../../../components/Box/Box'
-import {Icon} from '../../../components/Icon/Icon'
-import {Button} from '../../../components/Button/Button'
-import {Text} from '../../../components/Text/Text'
-import {Screen} from '../../../components/Screen/Screen'
+import {
+  Box,
+  BoxProps,
+  Icon,
+  Button,
+  Text,
+  Screen,
+  FormTextInput,
+  FormPasswordInput
+} from '@components'
 import {Alert, Image} from 'react-native'
 import {RootStackParamList} from '../../../routes/Routes'
 import {zodResolver} from '@hookform/resolvers/zod'
 import {LoginSchema, loginSchema} from './loginSchema'
-import {FormTextInput} from '../../../components/Form/FormTextInput'
-import {FormPasswordInput} from '../../../components/Form/FormPasswordInput'
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
 
@@ -74,7 +77,7 @@ export function LoginScreen({navigation}: ScreenProps) {
         </Text>
 
         <Button
-        disabled={!formState.isValid}
+          disabled={!formState.isValid}
           onPress={navigateToSignUpScreen}
           preset="secondary"
           title="Crie sua conta"
