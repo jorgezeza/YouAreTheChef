@@ -1,19 +1,20 @@
 import React from 'react'
-import {Screen} from '../../../components/Screen/Screen'
-import {TextInput} from '../../../components/TextInput/TextInput'
-import {Button} from '../../../components/Button/Button'
-import {Icon} from '../../../components/Icon/Icon'
-import {PasswordInput} from '../../../components/PasswordInput/PasswordInput'
-import {Box, BoxProps} from '../../../components/Box/Box'
-import { Image} from 'react-native'
+import {Image} from 'react-native'
 import {NativeStackScreenProps} from '@react-navigation/native-stack'
-import {RootStackParamList} from '../../../routes/Routes'
-import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess'
-import {FormPasswordInput} from '../../../components/Form/FormPasswordInput'
 import {useForm} from 'react-hook-form'
-import {FormTextInput} from '../../../components/Form/FormTextInput'
-import { signUpSchema, SignUpSchema } from './signUpSchema'
-import { zodResolver } from '@hookform/resolvers/zod'
+import {zodResolver} from '@hookform/resolvers/zod'
+import {
+  FormTextInput,
+  FormPasswordInput,
+  Screen,
+  Button,
+  Box,
+  BoxProps,
+  Icon
+} from '@components'
+import {signUpSchema, SignUpSchema} from './signUpSchema'
+import {useResetNavigationSuccess} from '@hooks'
+import {RootStackParamList} from '@routes'
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
 
@@ -81,7 +82,6 @@ export function SignUpScreen({navigation}: ScreenProps) {
         onPress={handleSubmit(submitForm)}
         title="Criar uma conta"
       />
-
     </Screen>
   )
 }

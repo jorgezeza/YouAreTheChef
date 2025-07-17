@@ -1,12 +1,13 @@
 import React from 'react'
 import {EyeOnIcon} from '../../assests/icons/EyeOnIcon'
 import {EyeOffIcon} from '../../assests/icons/EyeOffIcon'
-import {themeColors} from '../../theme/theme'
-import {useAppTheme} from '../../hooks/useAppTheme'
 import {UserIcon} from '../../assests/icons/UserIcon'
 import {EmailIcon} from '../../assests/icons/EmailIcon'
 import {LockIcon} from '../../assests/icons/LockIcon'
 import {Pressable} from 'react-native'
+
+import { useAppTheme } from '@hooks'
+import { ThemeColors } from '@theme'
 
 export interface IconBase {
   size?: number
@@ -15,7 +16,7 @@ export interface IconBase {
 
 interface Props {
   name: IconName
-  color?: themeColors
+  color?: ThemeColors
   size?: number
   onPress?: () => void
 }

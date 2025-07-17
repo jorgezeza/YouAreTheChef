@@ -1,9 +1,11 @@
-/* eslint-disable @typescript-eslint/no-shadow */
 import React from 'react'
-import {Text} from '../Text/Text'
-import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box'
+import {
+  ActivityIndicator,
+  Text,
+  TouchableOpacityBox,
+  TouchableOpacityBoxProps
+} from '@components'
 import {buttonPresets} from './buttonPreset'
-import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator'
 
 export type ButtonPreset = 'primary' | 'secondary' | 'outline'
 
