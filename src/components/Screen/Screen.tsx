@@ -9,7 +9,7 @@ interface ScreenProps {
   children: React.ReactNode
   canGoBack?: boolean
   scrollable?: boolean
-  imageBackground: ImageNames
+  imageBackground?: ImageNames
 }
 
 export function Screen({
