@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import React from 'react'
 import {Image} from 'react-native'
-import {NativeStackScreenProps} from '@react-navigation/native-stack'
 import {useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
 import {
@@ -14,11 +14,10 @@ import {
 } from '@components'
 import {signUpSchema, SignUpSchema} from './signUpSchema'
 import {useResetNavigationSuccess} from '@hooks'
-import {RootStackParamList} from '@routes'
+import {AuthScreenPros} from '@routes'
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>
-
-export function SignUpScreen({navigation}: ScreenProps) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function SignUpScreen({navigation}: AuthScreenPros<'SignUpScreen'>) {
   const {reset} = useResetNavigationSuccess()
   const {control, formState, handleSubmit} = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
@@ -32,10 +31,10 @@ export function SignUpScreen({navigation}: ScreenProps) {
   })
   const submitForm = (formValues: SignUpSchema) => {
     return console.log(formValues)
-    // reset({
-    //   title: 'Sua conta foi criada com sucesso !',
-    //   description: 'Agora é só fazer login no app'
-    // })
+    reset({
+      title: 'Sua conta foi criada com sucesso !',
+      description: 'Agora é só fazer login no app'
+    })
   }
   return (
     <Screen canGoBack scrollable imageBackground="backgroundLogin">

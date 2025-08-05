@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import {NativeStackScreenProps} from '@react-navigation/native-stack'
 import {Alert, Image} from 'react-native'
 import {zodResolver} from '@hookform/resolvers/zod'
-import {RootStackParamList} from '@routes'
+import {AuthScreenPros} from '@routes'
 import {LoginSchema, loginSchema} from './loginSchema'
 import {
   Box,
@@ -16,9 +16,7 @@ import {
   FormPasswordInput
 } from '@components'
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
-
-export function LoginScreen({navigation}: ScreenProps) {
+export function LoginScreen({navigation}: AuthScreenPros<'LoginScreen'>) {
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {

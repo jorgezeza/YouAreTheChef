@@ -1,10 +1,8 @@
 import {Button, Screen, Text} from '@components'
-import {NativeStackScreenProps} from '@react-navigation/native-stack'
+import {AppScreenPros} from '@routes'
 import React from 'react'
-import {AppStackParamList} from 'src/routes/AppStack'
 
-type ScreenProps = NativeStackScreenProps<AppStackParamList, 'HomeScreen'>
-export function HomeScreen({navigation}: ScreenProps) {
+export function HomeScreen({navigation}: AppScreenPros<'HomeScreen'>) {
   return (
     <Screen>
       <Text preset="extraLargeFont">Home Screen</Text>
