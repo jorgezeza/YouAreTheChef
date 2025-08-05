@@ -3,14 +3,13 @@ import { ButtonPreset, TouchableOpacityBoxProps } from "@components"
 
 interface ButtonUI {
   container: TouchableOpacityBoxProps,
-  content: ThemeColors,
-  icon?: any
+  content: ThemeColors
 }
 
- export const buttonPresets: Record<ButtonPreset, {
+export const buttonPresets: Record<ButtonPreset, {
   default: ButtonUI,
   disabled: ButtonUI,
- }> = {
+}> = {
   primary: {
     default: {
       container: {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import React from 'react'
 import {ImageBackground, KeyboardAvoidingView, Platform} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
